@@ -1,0 +1,22 @@
+     1                                  
+     2                                          SECTION .data
+     3                                  
+     4 00000000 48656C6C6F20576F72-     msg:    db  "Hello World", 10
+     5 00000009 6C640A             
+     6                                  
+     7                                          SECTION .text
+     8                                  
+     9                                      global _start
+    10                                  
+    11                                  ; Program entry point
+    12                                    _start:
+    13                                  
+    14 00000000 B804000000                    mov eax, 4      ; write syout command to int 80 hex
+    15 00000005 BB01000000                    mov ebx, 1      ; arg1, where to write, screen
+    16 0000000A B9[00000000]                  mov ecx, msg    ; arg2, pointer to string
+    17 0000000F BA0C000000                    mov edx, 12     ; arg3, string size
+    18 00000014 CD80                          int 0x80        ; interrupt 80 hex, call kernel
+    19                                  
+    20 00000016 BB00000000                    mov ebx, 0      ; exit code, 0=normal
+    21 0000001B B801000000                    mov eax, 1      ; exit command to kernel
+    22 00000020 CD80                          int 0x80        ; interrupt 80 hex, call kernel
