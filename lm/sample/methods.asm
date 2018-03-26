@@ -5,3 +5,8 @@ _print:
     mov     eax,  4             ; write sysout command to int 80 hex
     int     0x80                ; interrupt 80 hex, call kernel
     ret
+
+_exit:
+    ; mov     ebx,  int_result       ; exit code, 0 = ssnormal
+    mov     eax,  1       ; exit command to kernel
+    int     0x80
