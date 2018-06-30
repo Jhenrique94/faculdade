@@ -1,14 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include "tamanho.h"
 
-void preencher_matriz(int X[A_Linhas][A_Colunas], int Y[C_Linhas][C_Colunas])
+void preencher_matriz(int X[A_Linhas][A_Colunas], int Y[C_Linhas][C_Colunas], int seed)
 {
   int c, l;
 
-  // srand(1);
-  srand(time(NULL));
+  srand(seed);
   for (l = 0; l < A_Linhas; l++)
   {
     for (c = 0; c < A_Colunas; c++)
