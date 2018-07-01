@@ -16,6 +16,7 @@ int main()
 {
   int A[A_Linhas][A_Colunas];
   int C[C_Linhas][C_Colunas];
+  int seed = 1;
 
   int resultado;
 
@@ -25,21 +26,21 @@ int main()
     return 0;
   }
 
-  preencher_matriz(A, C, 1);
+  preencher_matriz(A, C, seed);
   // Codigo em C
   multiplica_por_inteiro(A, 5);
   // imprimir_matrizes(A, C);
   resultado = maior_valor_diagonal_principal_mutiplicada(A, C);
-  printf("Resultado C: %d \n", resultado);
+  printf("Menor valor da diagonal(5A X C): %d \n", resultado);
 
-  // preencher_matriz(A, C, 1);
+  // preencher_matriz(A, C, seed);
   // // Codigo em gas
   // gas_multiplica_por_inteiro(A, 5);
   // // imprimir_matrizes(A, C);
   // resultado = gas_maior_valor_diagonal_principal_mutiplicada(A, C);
   // printf("Resultado gas: %d \n", resultado);
 
-  // preencher_matriz(A, C, 1);
+  // preencher_matriz(A, C, seed);
   // // Codigo em nasm
   // nasm_multiplica_por_inteiro(A, 5);
   // // imprimir_matrizes(A, C);

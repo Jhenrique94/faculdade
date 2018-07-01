@@ -46,7 +46,7 @@ int maior_valor_diagonal_principal_mutiplicada(int X[A_Linhas][A_Colunas], int Y
 {
   int tamanho_diagonal = A_Linhas;
   int c, aux;
-  int resultado = 0;
+  int resultado = -1;
 
   if (C_Colunas < tamanho_diagonal)
   {
@@ -58,7 +58,7 @@ int maior_valor_diagonal_principal_mutiplicada(int X[A_Linhas][A_Colunas], int Y
   for (c = 0; c < tamanho_diagonal; c++)
   {
     aux = multiplica_linha_por_coluna(X, Y, c, tamanho_diagonal);
-    if (aux > resultado)
+    if (aux < resultado || resultado == -1)
     {
       resultado = aux;
     }
