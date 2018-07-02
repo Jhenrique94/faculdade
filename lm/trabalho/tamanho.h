@@ -1,4 +1,4 @@
-#define A_Linhas 4
-#define A_Colunas 3
-#define C_Linhas 3
-#define C_Colunas 4
+#define A_Linhas  1000
+#define A_Colunas 1000
+#define C_Linhas  1000
+#define C_Colunas 1000
